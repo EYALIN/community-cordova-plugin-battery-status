@@ -12,6 +12,7 @@
       "windows"
     ]
   },
+  "readme": "README.md",
   "repository": "EYALIN/community-cordova-plugin-battery-status/tree/master",
   "homepage": "https://github.com/EYALIN/community-cordova-plugin-battery-status/tree/master",
   "funding": "https://github.com/sponsors/EYALIN",
