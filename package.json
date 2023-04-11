@@ -12,10 +12,10 @@
       "windows"
     ]
   },
-  "repository": "EYALIN/community-cordova-plugin-battery-status",
-  "homepage": "https://github.com/EYALIN/community-cordova-plugin-battery-status",
+  "repository": "EYALIN/community-cordova-plugin-battery-status/tree/master",
+  "homepage": "https://github.com/EYALIN/community-cordova-plugin-battery-status/tree/master",
   "funding": "https://github.com/sponsors/EYALIN",
-  "bugs": "https://github.com/EYALIN/community- cordova-plugin-battery-status/issues",
+  "bugs": "https://github.com/EYALIN/community-cordova-plugin-battery-status/issues",
   "keywords": [
     "cordova",
     "battery",
