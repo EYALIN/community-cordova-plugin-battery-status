@@ -19,14 +19,14 @@
 -->
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-      id="cordova-plugin-battery-status"
-      version="2.0.4-dev">
+      id="community-cordova-plugin-battery-status"
+      version="2.0.5">
     <name>Battery</name>
-    <description>Cordova Battery Plugin</description>
+    <description>Community Cordova Battery Plugin</description>
     <license>Apache 2.0</license>
     <keywords>cordova,battery</keywords>
-    <repo>https://github.com/apache/cordova-plugin-battery-status</repo>
-    <issue>https://github.com/apache/cordova-plugin-battery-status/issues</issue>
+    <repo>https://github.com/EYALIN/community-cordova-plugin-battery-status</repo>
+    <issue>https://github.com/EYALIN/community-cordova-plugin-battery-status</issue>
 
     <js-module src="www/battery.js" name="battery">
         <clobbers target="navigator.battery" />

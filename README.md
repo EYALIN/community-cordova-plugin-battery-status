@@ -1,3 +1,10 @@
+[![NPM version](https://img.shields.io/npm/v/community-cordova-plugin-battery-status)](https://www.npmjs.com/package/community-cordova-plugin-battery-status)
+
+[comment]: <> ([![Downloads]&#40;https://img.shields.io/npm/dm/community-cordova-plugin-battery-status&#41;]&#40;https://www.npmjs.com/package/community-cordova-plugin-battery-status&#41;)
+
+
+
+
 ---
 title: Battery Status
 description: Get events for device battery level.
@@ -21,6 +28,7 @@ description: Get events for device battery level.
 #         under the License.
 -->
 
+### This is a fork of the original plugin cordova-plugin-battery-status
 # cordova-plugin-battery-status
 
 [![Android Testsuite](https://github.com/apache/cordova-plugin-battery-status/actions/workflows/android.yml/badge.svg)](https://github.com/apache/cordova-plugin-battery-status/actions/workflows/android.yml) [![Chrome Testsuite](https://github.com/apache/cordova-plugin-battery-status/actions/workflows/chrome.yml/badge.svg)](https://github.com/apache/cordova-plugin-battery-status/actions/workflows/chrome.yml) [![iOS Testsuite](https://github.com/apache/cordova-plugin-battery-status/actions/workflows/ios.yml/badge.svg)](https://github.com/apache/cordova-plugin-battery-status/actions/workflows/ios.yml) [![Lint Test](https://github.com/apache/cordova-plugin-battery-status/actions/workflows/lint.yml/badge.svg)](https://github.com/apache/cordova-plugin-battery-status/actions/workflows/lint.yml)
@@ -35,7 +43,7 @@ Applications may use `window.addEventListener` to attach an event listener for a
 
 ## Installation
 
-    cordova plugin add cordova-plugin-battery-status
+    cordova plugin add community-cordova-plugin-battery-status
 
 ## Status object
 

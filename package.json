@@ -1,10 +1,10 @@
 {
-  "name": "cordova-plugin-battery-status",
-  "version": "2.0.4-dev",
-  "description": "Cordova Battery Plugin",
+  "name": "community-cordova-plugin-battery-status",
+  "version": "2.0.5",
+  "description": "Community Cordova Battery Plugin",
   "types": "./types/index.d.ts",
   "cordova": {
-    "id": "cordova-plugin-battery-status",
+    "id": "community-cordova-plugin-battery-status",
     "platforms": [
       "android",
       "ios",
@@ -12,8 +12,10 @@
       "windows"
     ]
   },
-  "repository": "github:apache/cordova-plugin-battery-status",
-  "bugs": "https://github.com/apache/cordova-plugin-battery-status/issues",
+  "repository": "EYALIN/community-cordova-plugin-battery-status",
+  "homepage": "https://github.com/EYALIN/community-cordova-plugin-battery-status",
+  "funding": "https://github.com/sponsors/EYALIN",
+  "bugs": "https://github.com/EYALIN/community- cordova-plugin-battery-status/issues",
   "keywords": [
     "cordova",
     "battery",
