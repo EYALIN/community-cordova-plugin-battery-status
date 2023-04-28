@@ -20,7 +20,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
       id="community-cordova-plugin-battery-status"
-      version="2.0.5">
+      version="2.1.0">
     <name>Battery</name>
     <description>Community Cordova Battery Plugin</description>
     <license>Apache 2.0</license>

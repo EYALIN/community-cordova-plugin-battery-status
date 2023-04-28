@@ -13,11 +13,11 @@ interface Window {
     /**
      * Adds a listener for an event from the BatteryStatus plugin.
      * @param type       - The event to listen for.
-     * 
+     *
      *                     `batterystatus`: event fires when the percentage of battery charge changes by at least 1 percent, or if the device is plugged in or unplugged.
-     * 
+     *
      *                     `batterycritical`: event fires when the percentage of battery charge has reached the critical battery threshold. The value is device-specific.
-     * 
+     *
      *                     `batterylow`: event fires when the percentage of battery charge has reached the low battery threshold, device-specific value.
      * @param listener   - The function that executes when the event fires. The function is passed an BatteryStatusEvent object as a parameter.
      * @param useCapture - A Boolean indicating whether events of this type will be dispatched to the registered listener before being dispatched to any EventTarget beneath it in the DOM tree.
@@ -26,11 +26,11 @@ interface Window {
     /**
      * Removes a listener for an event from the BatteryStatus plugin.
      * @param Atype      - The event to stop listening for.
-     * 
+     *
      *                     `batterystatus`: event fires when the percentage of battery charge changes by at least 1 percent, or if the device is plugged in or unplugged.
-     *                    
+     *
      *                     `batterycritical`: event fires when the percentage of battery charge has reached the critical battery threshold. The value is device-specific.
-     *                    
+     *
      *                     `batterylow`: event fires when the percentage of battery charge has reached the low battery threshold, device-specific value.
      * @param callback   - The function that executes when the event fires. The function is passed an BatteryStatusEvent object as a parameter.
      * @param useCapture - A Boolean indicating whether events of this type will be dispatched to the registered listener before being dispatched to any EventTarget beneath it in the DOM tree.
@@ -43,4 +43,18 @@ interface BatteryStatusEvent extends Event {
     level: number;
 	/* A boolean that indicates whether the device is plugged in. */
     isPlugged: boolean;
+    /* A string that indicates charging type. */
+    chargeType: string;
+    /* A string that indicates the battery technology. */
+    technology: string;
+    /* A number that indicates the battery temperature. */
+    temperature: number;
+    /* A boolean that indicates whether the device is present. */
+    present: boolean;
+    /* The scale of the battery */
+    scale: number;
+    /* integer containing the current battery voltage level. */
+    voltageLevel: number;
+    /* a string indicates Health level */
+    currentBatteryHealth: string;
 }

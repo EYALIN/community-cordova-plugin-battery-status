@@ -131,6 +131,62 @@ public class BatteryListener extends CordovaPlugin {
         try {
             obj.put("level", batteryIntent.getIntExtra(android.os.BatteryManager.EXTRA_LEVEL, 0));
             obj.put("isPlugged", batteryIntent.getIntExtra(android.os.BatteryManager.EXTRA_PLUGGED, -1) > 0 ? true : false);
+            int chargeType = batteryIntent.getIntExtra(android.os.BatteryManager.EXTRA_PLUGGED, -1);
+            if(chargeType == android.os.BatteryManager.BATTERY_PLUGGED_AC){
+                obj.put("chargeType", "AC charger");
+            }
+            if(chargeType == android.os.BatteryManager.BATTERY_PLUGGED_USB){
+                 obj.put("chargeType", "USB port");
+            }
+            if(chargeType == android.os.BatteryManager.BATTERY_PLUGGED_WIRELESS){
+                 obj.put("chargeType", "Wireless");
+            }
+            if(chargeType == -1){
+                obj.put("chargeType", "Battery");
+            }
+            float voltage = ((float) batteryIntent.getIntExtra(android.os.BatteryManager.EXTRA_VOLTAGE, 0)) / 1000;
+            obj.put("voltageLevel", voltage);
+            float temperature = ((float) batteryIntent.getIntExtra(android.os.BatteryManager.EXTRA_TEMPERATURE, 0)) / 10;
+            obj.put("temperature", temperature);
+            String technology = batteryIntent.getExtras().getString(android.os.BatteryManager.EXTRA_TECHNOLOGY);
+            obj.put("technology", technology);
+            boolean present  = batteryIntent.getExtras().getBoolean(android.os.BatteryManager.EXTRA_PRESENT);
+            obj.put("present", present);
+            obj.put("status", batteryIntent.getIntExtra(android.os.BatteryManager.EXTRA_STATUS,0));
+            int scale = batteryIntent.getIntExtra(android.os.BatteryManager.EXTRA_SCALE, -1);
+             // On some phones, scale is always 0.
+                if (scale == 0)
+                    scale = 100;
+            obj.put("scale", scale);
+
+             int deviceHealth = batteryIntent.getIntExtra(android.os.BatteryManager.EXTRA_HEALTH,0);
+
+            if(deviceHealth == android.os.BatteryManager.BATTERY_HEALTH_COLD){
+                obj.put("currentBatteryHealth", "Cold");
+            }
+
+            if(deviceHealth == android.os.BatteryManager.BATTERY_HEALTH_DEAD){
+                obj.put("currentBatteryHealth", "Dead");
+            }
+
+            if (deviceHealth == android.os.BatteryManager.BATTERY_HEALTH_GOOD){
+                obj.put("currentBatteryHealth", "Good");
+            }
+
+            if(deviceHealth == android.os.BatteryManager.BATTERY_HEALTH_OVERHEAT){
+                obj.put("currentBatteryHealth", "OverHeat");
+            }
+
+            if (deviceHealth == android.os.BatteryManager.BATTERY_HEALTH_OVER_VOLTAGE){
+                obj.put("currentBatteryHealth", "Over voltage");
+            }
+
+            if (deviceHealth == android.os.BatteryManager.BATTERY_HEALTH_UNKNOWN){
+                obj.put("currentBatteryHealth", "Unknown");
+            }
+            if (deviceHealth == android.os.BatteryManager.BATTERY_HEALTH_UNSPECIFIED_FAILURE){
+                obj.put("currentBatteryHealth", "Unspecified Failure");
+            }
         } catch (JSONException e) {
             LOG.e(LOG_TAG, e.getMessage(), e);
         }
