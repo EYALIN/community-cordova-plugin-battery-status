@@ -58,3 +58,70 @@ interface BatteryStatusEvent extends Event {
     /* a string indicates Health level */
     currentBatteryHealth: string;
 }
+
+/** Drain rate information */
+export interface IDrainRate {
+    drainPerHour: number;
+    drainCategory: 'low' | 'moderate' | 'high' | 'very_high';
+    estimatedHoursRemaining: number;
+    estimatedTimeFormatted: string;
+    isCharging: boolean;
+}
+
+/** Usage stats information (Android 5.0+) */
+export interface IUsageStats {
+    totalForegroundTime: number;
+    totalForegroundTimeFormatted: string;
+    appCount: number;
+}
+
+/** Enhanced power metrics (Android 5.0+) */
+export interface IEnhancedPowerMetrics {
+    supported: boolean;
+    currentDrawMA?: number;
+    powerState?: 'idle' | 'light' | 'moderate' | 'heavy';
+    drainRate?: IDrainRate;
+    screenOnTime?: number;
+    screenOnTimeFormatted?: string;
+    isPowerSaveMode?: boolean;
+    usageStats?: IUsageStats;
+    usageStatsPermission?: boolean;
+    uptimeFormatted?: string;
+}
+
+/** Basic power info (Android) */
+export interface IPowerInfo {
+    supported: boolean;
+    currentNowMA?: number;
+    currentAverageMA?: number;
+    chargeCounterMAH?: number;
+    energyCounterNWH?: number;
+    estimatedHoursRemaining?: number;
+    isDischarging?: boolean;
+}
+
+/** Battery Manager class for power metrics */
+export default class BatteryManager {
+    /**
+     * Get enhanced power metrics including drain rate, screen time, and usage stats
+     * @returns Promise with enhanced power metrics
+     */
+    getEnhancedPowerMetrics(): Promise<IEnhancedPowerMetrics>;
+
+    /**
+     * Get basic power info from BatteryManager API
+     * @returns Promise with power info
+     */
+    getPowerInfo(): Promise<IPowerInfo>;
+
+    /**
+     * Check if usage stats permission is granted (Android)
+     * @returns Promise with boolean
+     */
+    checkUsageStatsPermission(): Promise<boolean>;
+
+    /**
+     * Request usage stats permission (opens system settings on Android)
+     */
+    requestUsageStatsPermission(): Promise<void>;
+}

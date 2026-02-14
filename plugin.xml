@@ -20,7 +20,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
       id="community-cordova-plugin-battery-status"
-      version="2.1.0">
+      version="2.1.1">
     <name>Battery</name>
     <description>Community Cordova Battery Plugin</description>
     <license>Apache 2.0</license>
@@ -29,7 +29,7 @@
     <issue>https://github.com/EYALIN/community-cordova-plugin-battery-status</issue>
 
     <js-module src="www/battery.js" name="battery">
-        <clobbers target="navigator.battery" />
+        <clobbers target="BatteryPlugin" />
     </js-module>
 
     <!-- android -->
